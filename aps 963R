@@ -1,0 +1,36 @@
+/**
+Trabalho da Disciplina de Programação de JavaScript
+Turma: 963R
+Aluno: Vinicius Aguiar Costa
+Matrícula: 2024100823
+*/ 
+
+function fVerificarPrimo(num) {
+    if (num < 2) {
+        return false;
+    }
+
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        let resto = num % i;
+        if (resto === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function fImprimir_K_Maiores_Primos(num, qtde) {
+    let contador = 0;
+    let i = num;
+    while (contador < qtde) {
+        if (fVerificarPrimo(i)) {
+            console.log("O número [" + i + "] é primo!");
+            contador++;
+        }
+        i--;
+    }
+}
+
+let numero = parseInt(prompt("Digite um número"));
+let qtdePrimos = 10; // 
+fImprimir_K_Maiores_Primos(numero, qtdePrimos);
